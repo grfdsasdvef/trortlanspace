@@ -3,29 +3,94 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>trortlanspace — DNS tooling notes</title>
+  <title>Trortlan — DNS &amp; mail tooling</title>
+  <meta name="description" content="Developer portfolio and notes about DNS, email authentication and domain research tools.">
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 46rem; margin: 4rem auto; padding: 0 1.2rem; line-height: 1.6; color: #1a1a1a; }
-    code { background: #f3f3f3; padding: .1rem .3rem; border-radius: 4px; }
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; max-width: 52rem; margin: 3.5rem auto; padding: 0 1.25rem; line-height: 1.65; color: #171717; background: #fff; }
+    header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid #e5e5e5; padding-bottom: 1rem; margin-bottom: 2rem; }
+    nav a { margin-left: 1rem; color: #555; text-decoration: none; }
+    h1 { font-size: 2rem; margin: 0 0 .4rem; letter-spacing: -0.02em; }
+    h2 { font-size: 1.2rem; margin-top: 2.2rem; }
     .muted { color: #666; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .card { border: 1px solid #e5e5e5; border-radius: 10px; padding: 1rem 1.1rem; }
+    .card h3 { margin: 0 0 .4rem; font-size: 1rem; }
+    code { background: #f4f4f4; padding: .1rem .3rem; border-radius: 4px; font-size: .9em; }
+    footer { border-top: 1px solid #e5e5e5; margin-top: 3rem; padding-top: 1rem; font-size: .9rem; color: #666; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8e8; background: #111; }
+      header, footer { border-color: #2a2a2a; }
+      nav a { color: #aaa; }
+      .card { border-color: #2a2a2a; }
+      code { background: #222; }
+      .muted, footer { color: #999; }
+    }
   </style>
 </head>
 <body>
-  <h1>trortlanspace</h1>
-  <p>A small, non-commercial developer project about DNS and domain plumbing.</p>
+  <header>
+    <strong>trortlanspace</strong>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#notes">Notes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <h2>What is here</h2>
-  <ul>
-    <li>DNS record checks: NS, MX, TXT, CAA and delegation sanity.</li>
-    <li>Abuse-contact discovery for domains and hosting providers.</li>
-    <li>Notes on free-domain services and their real limits.</li>
-  </ul>
+  <main>
+    <h1>Developer portfolio &amp; DNS tooling</h1>
+    <p class="muted">Small, non-commercial open-source tools for DNS, email authentication,
+    domain research and repository security.</p>
 
-  <h2>Status</h2>
-  <p>This is an early documentation and tooling page. Code and notes live in the
-  public repository linked below.</p>
+    <section id="about">
+      <h2>About</h2>
+      <p>I build and document practical infrastructure tooling: DNS record checks, MX/SPF/DKIM/DMARC
+      validation, abuse-contact discovery, and static audits of third-party repositories. The focus is
+      on evidence: every conclusion should come from a reproducible check, not a guess.</p>
+    </section>
 
-  <p><a href="https://github.com/grfdsasdvef">Source and notes on GitHub</a></p>
-  <p class="muted">No accounts, payments, ads or tracking on this page.</p>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>offerlab</h3>
+          <p>Collects free-domain offers from lists, forums and search, then scores them by DNS control,
+          abuse contacts, card/KYC requirements and red flags. Includes proxy and Tor-aware fetching.</p>
+        </article>
+        <article class="card">
+          <h3>repoaudit</h3>
+          <p>Static audit for GitHub repositories: binaries, install hooks, dangerous workflows,
+          committed secrets and prompt-injection patterns — without executing third-party code.</p>
+        </article>
+        <article class="card">
+          <h3>Mail &amp; DNS notes</h3>
+          <p>Per-domain MX, SNI certificates, SPF, DKIM and DMARC on a self-hosted Mox server.
+          Documentation covers repeatable setup and verification commands.</p>
+        </article>
+        <article class="card">
+          <h3>Domain research</h3>
+          <p>Checks for free-domain services, delegation limits, abuse contacts and whether an offer
+          actually works in practice rather than only on a landing page.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="notes">
+      <h2>Notes</h2>
+      <p>Tooling and notes live in the public GitHub account. The pages here document the projects,
+      limitations and reproducible checks. No accounts, payments, ads or tracking are used on this site.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:contact@trortlanspace.indevs.in">contact@trortlanspace.indevs.in</a></p>
+      <p>Source and notes: <a href="https://github.com/grfdsasdvef">github.com/grfdsasdvef</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Trortlan — DNS &amp; mail tooling. Non-commercial developer project.</p>
+  </footer>
 </body>
 </html>
